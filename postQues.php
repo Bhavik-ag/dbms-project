@@ -6,7 +6,7 @@
     $timeSt = date("h:i:sa");
     $body = $_POST['body'];
     $cat = $_POST['cat'];
-    $rno = $_SESSION['userid'];
+    $rno = $_SESSION['rno'];
     $head = $_POST['heading'];
     $sql="insert into message values('$msgId', '$body', '$timeSt', '$cat', '$rno', '$head')";
     $res=mysqli_query($conn,$sql);
