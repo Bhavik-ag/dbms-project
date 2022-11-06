@@ -15,11 +15,11 @@
         include('./navbar.php');
     ?>
 
-    <section class="flex-col w-full justify-center mt-10">
+    <section class="flex-col w-full justify-center mt-10 mb-10">
         <?php
         include("./catnav.php");
         include("./conf.php");
-        $sql = "select * from Message";
+        $sql = "select * from message";
         $res = mysqli_query($conn, $sql);
         while ($result = mysqli_fetch_assoc($res)) {
             echo
@@ -30,14 +30,17 @@
                         <div class="text-lg font-bold text-slate-700 cursor-pointer">@' . $result['rollno'] . '</div>
                         </div>
                         <div class="flex items-center space-x-8">
-                        <a href="/category.php/?cat='.strtolower($result['category']).'"><button class="rounded-2xl border hover:bg-gray-200 bg-neutral-100 px-3 py-1 text-xs font-semibold">'.strtoupper($result['category']).'</button></a>
+                        <a href="./category.php/?cat='.strtolower($result['category']).'"><button class="rounded-2xl border hover:bg-gray-200 bg-neutral-100 px-3 py-1 text-xs font-semibold">'.strtoupper($result['category']).'</button></a>
                         <div class="text-xs text-neutral-500">' . $result['timeSt'] . '</div>
                     </div>
                     </div>
 
                 <div class="mt-4 mb-6">
                     <div class="mb-3 text-xl font-bold">' . $result['heading'] . '</div>
-                    <div class="text-lg text-neutral-800">' . $result['body'] . '</div>
+                    <div class="flex justify-between">
+                        <div class="text-lg text-neutral-800">' . $result['body'] . '</div>
+                        <a class="float-right font-bold text-[#4e53c8]" href="./replies.php/?id='.$result['msgid'].'">Show More -></a>
+                    </div>
                 </div>
             </div>
         </div>';

@@ -19,7 +19,7 @@
 
         <?php
         include("./conf.php");
-        $sql = "select * from Message where category ='".$_GET['cat']."'";
+        $sql = "select * from message where category ='".$_GET['cat']."'";
         $res = mysqli_query($conn, $sql);
         while ($result = mysqli_fetch_assoc($res)) {
             echo
