@@ -30,7 +30,7 @@
                         <div class="text-lg font-bold text-slate-700 cursor-pointer">@' . $result['rollno'] . '</div>
                         </div>
                         <div class="flex items-center space-x-8">
-                        <a href="./category.php/?cat='.strtolower($result['category']).'"><button class="rounded-2xl border hover:bg-gray-200 bg-neutral-100 px-3 py-1 text-xs font-semibold">'.strtoupper($result['category']).'</button></a>
+                        <a href="/category.php/?cat='.strtolower($result['category']).'"><button class="rounded-2xl border hover:bg-gray-200 bg-neutral-100 px-3 py-1 text-xs font-semibold">'.strtoupper($result['category']).'</button></a>
                         <div class="text-xs text-neutral-500">' . $result['timeSt'] . '</div>
                     </div>
                     </div>
