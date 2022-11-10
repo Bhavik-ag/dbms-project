@@ -27,7 +27,7 @@
             <div class="rounded-xl border p-5 shadow-md bg-white m-3 w-4/5">
                 <div class="flex w-full items-center justify-between border-b pb-3">
                     <div class="flex items-center space-x-3">
-                        <div class="text-lg font-bold text-slate-700 cursor-pointer">@' . $result['rollno'] . '</div>
+                        <div class="text-lg font-bold text-slate-700 cursor-pointer"><a href="/dbms-project/profile.php?rno='.$result['rollno'].'">@' . strtoupper($result['rollno']) . '</a></div>
                         </div>
                         <div class="flex items-center space-x-8">
                         <a href="/category.php/?cat='.strtolower($result['category']).'"><button class="rounded-2xl border hover:bg-gray-200 bg-neutral-100 px-3 py-1 text-xs font-semibold">'.strtoupper($result['category']).'</button></a>

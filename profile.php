@@ -33,8 +33,8 @@
                     <div class="w-full lg:w-9/12 px-4">
                         <?php 
                             include('conf.php');
-                            session_start();
-                            $rno = $_SESSION['rno'];
+                            // session_start();
+                            $rno = $_GET['rno'];
                             $sql = "select * from student where rollno='$rno'";
                             $sql2 = "select * from message where rollno='$rno' order by timeSt desc";
                             $res = mysqli_query($conn, $sql);
