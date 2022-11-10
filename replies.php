@@ -32,7 +32,7 @@
                 <div class="rounded-xl border p-5 shadow-md bg-white m-3 w-4/5">
                     <div class="flex w-full items-center justify-between border-b pb-3">
                         <div class="flex items-center space-x-3">
-                            <div class="text-lg font-bold text-slate-700 cursor-pointer">@' . $result['rollno'] . '</div>
+                            <div class="text-lg font-bold text-slate-700 cursor-pointer"><a href="/dbms-project/profile.php?rno='.$result['rollno'].'">@' . strtoupper($result['rollno']) . '</a></div>
                         </div>
                         <div class="flex items-center space-x-8">
                             <div class="text-xs text-neutral-500">' . $result['timeSt'] . '</div>
@@ -46,35 +46,8 @@
                         </div>
                     </div>
                 </div>
-            </div>';
-                
-        }
-
-        $sql = "select * from replies where msgid ='".$_GET['id']."'";
-        $res = mysqli_query($conn, $sql);
-
-        while ($result = mysqli_fetch_assoc($res)) {
-            echo
-            '<div class="flex justify-center pl-20">
-                <div class="rounded-xl border p-5 shadow-md bg-white m-3 w-9/12">
-                    <div class="flex w-full items-center justify-between border-b pb-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="text-lg font-bold text-slate-700 cursor-pointer">@' . substr($result['replyid'],0,8). '</div>
-                        </div>
-                        <div class="flex items-center space-x-8">
-                            <div class="text-xs text-neutral-500">' . $result['timest'] . '</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 mb-6">
-                        <div class="flex justify-between">
-                            <div class="text-lg text-neutral-800">' . $result['body'] . '</div>
-                        </div>
-                    </div>
-                </div>
-            </div>';
-            }
-        ?>
+            </div>';       
+        } ?>
 
         <div class="flex justify-center pl-20"> 
             <div class="rounded-xl border p-5 shadow-md bg-white m-3 w-9/12">
@@ -97,6 +70,34 @@
                 </div>
             </div>
         </div>
+
+        <?php
+        $sql = "select * from replies where msgid ='".$_GET['id']."'";
+        $res = mysqli_query($conn, $sql);
+
+        while ($result = mysqli_fetch_assoc($res)) {
+            echo
+            '<div class="flex justify-center pl-20">
+                <div class="rounded-xl border p-5 shadow-md bg-white m-3 w-9/12">
+                    <div class="flex w-full items-center justify-between border-b pb-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="text-lg font-bold text-slate-700 cursor-pointer"><a href="/dbms-project/profile.php?rno='.substr($result['replyid'],0,8).'">@' . strtoupper(substr($result['replyid'],0,8)). '</a></div>
+                        </div>
+                        <div class="flex items-center space-x-8">
+                            <div class="text-xs text-neutral-500">' . $result['timest'] . '</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 mb-6">
+                        <div class="flex justify-between">
+                            <div class="text-lg text-neutral-800">' . $result['body'] . '</div>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+            }
+        ?>
+
     </section>
 </body>
 
