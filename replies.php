@@ -16,11 +16,6 @@
 
 
     <section class="flex-col w-full justify-center mt-10 mb-10">
-        <div class="flex justify-center items-center">
-            <div class="flex justify-end items-center m-3 w-4/5">
-                <a class="button" href="#divOne"><button type="button" class="inline-block px-6 mx-2 py-2.5 bg-[#4e53c8] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150">Add a reply</button></a>
-            </div>
-        </div>
         <?php
         include("./conf.php");
 
