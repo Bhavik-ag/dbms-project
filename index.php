@@ -19,7 +19,7 @@
         <?php
         include("./catnav.php");
         include("./conf.php");
-        $sql = "select * from message";
+        $sql = "select * from message where approved = 1";
         $res = mysqli_query($conn, $sql);
         while ($result = mysqli_fetch_assoc($res)) {
             echo
