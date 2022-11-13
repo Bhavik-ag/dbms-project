@@ -158,6 +158,28 @@ body {
     width: 50%;
 }
 
+.login-details {
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.heading {
+    font-size: 38px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.heading-sub {
+    margin: 0;
+    padding: 0;
+    color: #a5a7b9;
+}
+
 .signUp {
     display: flex;
     justify-content: flex-end;
@@ -210,27 +232,6 @@ body {
 
 .admin a:hover {
     background-color: #f2f2f2;
-}
-
-.login-details {
-    width: 50%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    padding-left: 50px;
-}
-
-.heading {
-    font-size: 38px;
-    margin-top: 10px;
-    font-weight: 600;
-}
-
-.heading-sub {
-    margin: 0;
-    padding: 0;
-    color: #a5a7b9;
 }
 
 .entry {

@@ -14,7 +14,6 @@
         include('./navbar.php');
     ?>
 
-
     <section class="flex-col w-full justify-center mt-10 mb-10">
         <?php
         include("./conf.php");

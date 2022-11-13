@@ -8,7 +8,7 @@
     $cat = $_POST['cat'];
     $rno = $_SESSION['rno'];
     $head = $_POST['heading'];
-    $sql="insert into message values('$msgId', '$body', '$timeSt', '$cat', '$rno', '$head')";
+    $sql="insert into message values('$msgId', '$body', '$timeSt', '$cat', '$rno', '$head', '0')";
     $res=mysqli_query($conn,$sql);
     echo $timeSt;
     if($res) {
