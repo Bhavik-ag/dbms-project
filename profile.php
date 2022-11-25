@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
@@ -36,7 +36,7 @@
                             // session_start();
                             $rno = $_GET['rno'];
                             $sql = "select * from student where rollno='$rno'";
-                            $sql2 = "select * from message where rollno='$rno' order by timeSt desc";
+                            $sql2 = "select * from message where rollno='$rno' and approved = 1 order by timeSt desc";
                             $res = mysqli_query($conn, $sql);
                             if($result = mysqli_fetch_assoc($res)) {
                                 echo "<div class='text-center mt-8 mb-4'>

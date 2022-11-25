@@ -11,10 +11,16 @@
         $_SESSION['userid'] = $result['username'];
         if($result2=mysqli_fetch_assoc($res2)) {
             $_SESSION['rno'] = $result2['rollno'];
+            $_SESSION['name'] = $result2['name'];
         }
         header('location:index.php');
     }
     else {
-        header('location:loginPage.php');
+        echo '<script>';
+        echo '  if (confirm("Invalid Credentials")) {';
+        echo '    document.location = "loginPage.php";';
+        echo '  }';
+        echo '</script>';
+        // header('location:loginPage.php');
     }
 ?>

@@ -12,7 +12,7 @@
 <body>
     <?php
         session_start();
-        if (isset($_SESSION['userid'])) {
+        if (isset($_SESSION['adminUserid'])) {
             header('location:adminDashboard.php');
         }
     ?>

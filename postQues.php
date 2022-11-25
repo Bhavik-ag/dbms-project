@@ -12,6 +12,11 @@
     $res=mysqli_query($conn,$sql);
     echo $timeSt;
     if($res) {
-        header('location:index.php');
+        echo '<script>';
+        echo '  if (confirm("Question Added, Please wait till it is approved!")) {';
+        echo '    document.location = "index.php";';
+        echo '  }';
+        echo '</script>';
+        // header('location:index.php');
     }
 ?>
