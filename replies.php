@@ -34,7 +34,7 @@
                     </div>
                             
                     <div class="mt-4 mb-6">
-                        <div class="mb-3 text-xl font-bold">' . $result['heading'] . '</div>
+                        <a href="./replies.php/?id='.$result['msgid'].'"><div class="mb-3 text-xl font-bold">' . $result['heading'] . '</div></a>
                         <div class="flex justify-flexend">
                             <div class="text-lg text-neutral-800">' . $result['body'] . '</div>
                         </div>
