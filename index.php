@@ -8,11 +8,18 @@
     <title>Student Discussion Forum</title>
     <link rel="stylesheet" href="./indexStyle.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
     <?php
         include('./navbar.php');
+        if($_POST['alert']){
+            echo '<div id="sub-info" class="flex p-4 mb-4 bg-green-100 dark:bg-green-200" role="alert">
+            <span class="sr-only">Info</span>
+            <div class="ml-3 text-sm font-medium text-green-700 dark:text-green-800">'.$_POST['alert'].'</div>
+          </div>';
+        }
     ?>
 
     <section class="flex-col w-full justify-center mt-10 mb-10">
@@ -39,6 +46,7 @@
             echo "<h1 class='text-center text-2xl font-semibold'>Search results for: $searchQuery</h1>";
             $sql = "select * from message where approved = 1 AND (heading LIKE '%$searchQuery%' OR body LIKE '%$searchQuery%')";
         }
+
         $res = mysqli_query($conn, $sql);
 
         while ($result = mysqli_fetch_assoc($res)) {
@@ -101,6 +109,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $('#sub-info').delay(5000).fadeOut(700); 
+    </script>
 </body>
 
 </html>
