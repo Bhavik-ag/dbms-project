@@ -4,11 +4,11 @@
             <span class="ml-3 text-xl text-white">Students Discussion Forum</span>
         </a>
         </div>
-        <div style="margin-right: 20px; color: white; display: flex; align-items: center;">
+        <div class="flex mr-5 text-white flex items-center">
             <?php
             session_start();
-            echo '<a href="/dbms-project/profile.php?rno='.$_SESSION['rno'].'"><img src="./assets/user.png" alt="userIcon" width="40px"> </a> <span style="margin-left: 10px;"></span>
-                <a href="/dbms-project/profile.php?rno='.$_SESSION['rno'].'"> ' . $_SESSION['name'] . '</a>';
+            echo '<a href="/dbms-project/profile.php?rno='.$_SESSION['rno'].'"><img src="./assets/user.png" alt="userIcon" width="30px"> </a> <span style="margin-left: 10px;"></span>
+                <a class="text-lg font-medium" href="/dbms-project/profile.php?rno='.$_SESSION['rno'].'"> ' . $_SESSION['name'] . '</a>';
             ?>
         </div>
         <div>
